@@ -1,5 +1,5 @@
 import 'package:firebase_core/firebase_core.dart';
-import 'package:firebase_demo/get_data.dart';
+import 'package:firebase_demo/screens/home.dart';
 import 'package:flutter/material.dart';
 
 void main() async {
@@ -41,7 +41,7 @@ class _CheckFirebaseConnectionState extends State<CheckFirebaseConnection> {
       future: firebaseInit,
       builder: (BuildContext context, AsyncSnapshot<FirebaseApp> snapshot) {
         if (snapshot.connectionState == ConnectionState.done) {
-          return const GetDataFromFirestore();
+          return const HomeScreen();
         } else {
           return textWidget(snapshot.error.toString());
         }
